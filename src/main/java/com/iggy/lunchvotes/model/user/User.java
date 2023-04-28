@@ -3,6 +3,7 @@ package com.iggy.lunchvotes.model.user;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.iggy.lunchvotes.HasIdAndEmail;
 import com.iggy.lunchvotes.model.NamedEntity;
+import com.iggy.lunchvotes.model.restaurant.Restaurant;
 import com.iggy.lunchvotes.util.validation.NoHtml;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -61,6 +62,10 @@ public class User extends NamedEntity implements HasIdAndEmail, Serializable {
     @JoinColumn
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<Role> roles;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id", unique = true)
+    private Restaurant restaurant;
 
     public User(User u) {
         this(u.id, u.name, u.email, u.password, u.enabled, u.registered, u.roles);

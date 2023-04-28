@@ -6,6 +6,8 @@ jwt:
 #  https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 spring:
   jpa:
+    database: POSTGRESQL
+#    databasePlatform: org.hibernate.dialect.PostgreSQL10Dialect
     show-sql: true
     open-in-view: false
     # https://stackoverflow.com/a/67678945/548473
@@ -20,10 +22,13 @@ spring:
         # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
         jdbc.batch_size: 20
   datasource:
-    url: jdbc:h2:mem:lunchvotes
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    username: user
+    password: password
+
+#    url: jdbc:h2:mem:lunchvotes
     #    tcp: jdbc:h2:tcp://localhost:9092/mem:lunchvotes
-    username: sa
-    password:
 
   # Jackson Serialization Issue Resolver
   jackson.visibility:

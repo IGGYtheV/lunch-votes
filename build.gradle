@@ -31,7 +31,10 @@ dependencies {
     implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion"
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5-jakarta'
     implementation "org.jsoup:jsoup:$jsoupVersion"
+
+    implementation 'org.postgresql:postgresql:42.5.1'
     implementation 'com.h2database:h2'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

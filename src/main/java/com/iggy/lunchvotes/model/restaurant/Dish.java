@@ -1,18 +1,19 @@
 package com.iggy.lunchvotes.model.restaurant;
 
-import com.iggy.lunchvotes.model.Restaurant;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
-@Table(name = "item")
+@Table(name = "dish")
 @Getter
 @Setter
-public class Item {
+@NoArgsConstructor
+public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -22,9 +23,9 @@ public class Item {
     @NotBlank(message = "title is mandatory")
     private String title;
 
-    @Column(name = "description", nullable = false)
-    @NotBlank(message = "description is mandatory")
-    private String description;
+    @Column(name = "price", nullable = false)
+    @NotBlank(message = "price is mandatory")
+    private Integer price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")
