@@ -1,0 +1,15 @@
+api/v1:
+    /admin:
+        /restaurants:    CRUD
+            /{id}        (POST dishTo - map <restID,List<dishId>>)
+        /dishes:         CRUD
+        /users:          CRUD
+            /{id}       RUD
+
+
+    /restaurants:       (GET all_with_meals)
+        /rating         (GET restfurantTO - <RestTitle, voteCount>)
+        /{id}           (GET this_with_meals)
+    /vote:              (POST voteTo - userId, restID)
+    /profile:
+

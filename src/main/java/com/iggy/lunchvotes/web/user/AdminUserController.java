@@ -21,7 +21,7 @@ import static com.iggy.lunchvotes.util.validation.ValidationUtil.checkNew;
 @RequestMapping(value = AdminUserController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class AdminUserController extends AbstractUserController {
 
-    static final String REST_URL = "/api/admin/users";
+    static final String REST_URL = "/api/v1.0/admin/users";
 
     @Override
     @GetMapping("/{id}")

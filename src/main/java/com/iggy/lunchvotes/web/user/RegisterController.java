@@ -18,7 +18,7 @@ import static com.iggy.lunchvotes.util.validation.ValidationUtil.checkNew;
 @RestController
 @RequestMapping(value = RegisterController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class RegisterController extends AbstractUserController {
-    static final String REST_URL = "/api/register";
+    static final String REST_URL = "/api/v1.0/register";
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
