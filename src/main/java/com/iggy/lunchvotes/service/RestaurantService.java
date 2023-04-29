@@ -1,23 +1,42 @@
 package com.iggy.lunchvotes.service;
 
 import com.iggy.lunchvotes.model.restaurant.Restaurant;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-public interface RestaurantService {
-    Restaurant create();
+@Service
+public class RestaurantService {
+    public Restaurant create(Restaurant restaurant){
+        return null;
+    }
 
-    Restaurant update();
+    public Restaurant update(int id, Restaurant restaurant){
+        return null;
+    }
 
-    Restaurant get();
-    Restaurant getWithDishes();
+    public Optional<Restaurant> get(int id){
+        return null;
+    }
+    public Restaurant getWithDishes(int id){
+        return null;
+    }
 
-    void delete();
+    public void delete(int id){
 
-    List<Restaurant> getAll();
+    }
 
-    List<Restaurant> getAllWithDishes();
+    public List<Restaurant> getAll(){
+        return null;
+    }
 
-    void setDishes();
+    public List<Restaurant> getAllWithDishes(){
+        return null;
+    }
+
+    public void setDishes(int id, List<Integer> ids){
+
+    }
 
 }

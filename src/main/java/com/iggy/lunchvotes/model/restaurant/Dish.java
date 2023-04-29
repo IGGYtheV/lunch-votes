@@ -1,5 +1,7 @@
 package com.iggy.lunchvotes.model.restaurant;
 
+import com.iggy.lunchvotes.HasId;
+import com.iggy.lunchvotes.model.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -13,13 +15,13 @@ import org.hibernate.annotations.OnDeleteAction;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Dish {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+public class Dish extends BaseEntity implements HasId {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id", nullable = false)
+//    private Integer id;
 
-    @Column(name = "title", nullable = false)
+    @Column(name = "title", length =100, nullable = false)
     @NotBlank(message = "title is mandatory")
     private String title;
 
@@ -29,7 +31,7 @@ public class Dish {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")
-    @OnDelete(action= OnDeleteAction.CASCADE)
+    @OnDelete(action= OnDeleteAction.NO_ACTION)
     private Restaurant restaurant;
 
 }

@@ -64,7 +64,7 @@ public class User extends NamedEntity implements HasIdAndEmail, Serializable {
     private Set<Role> roles;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "restaurant_id", unique = true)
+    @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
     public User(User u) {
